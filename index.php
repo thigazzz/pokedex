@@ -1,5 +1,7 @@
 <?php
 $pokemons = require('./api/api.php');
+require('./utils/utils.php');
+$util = new utils();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +10,7 @@ $pokemons = require('./api/api.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles//index.css">
     <title>PokeEtec</title>
 </head>
 
@@ -26,13 +28,13 @@ $pokemons = require('./api/api.php');
                 foreach ($pokemons as $pokemon) {
                 ?>
                     <div class='pokemon-card'>
-                        <img src="<?php echo $pokemon["sprite"] ?>" alt="">
-                        <?php echo $pokemon["name"] ?>
+                        <img class="pokemon-card-image" src="<?php echo $pokemon["sprite"] ?>" alt="">
+                        <h1 class="pokemon-card-name"><?php echo $pokemon["name"] ?></h1>
                         <div class="type-container">
                             <?php
                             foreach ($pokemon["types"] as $type) {
                             ?>
-                                <div class="type-card">
+                                <div class="type-card" style="background-color: <?php echo $util->setColorIntoTypeCard($type) ?>;">
                                     <?php echo $type ?>
                                 </div>
                             <?php
