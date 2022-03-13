@@ -11,13 +11,19 @@ $util = new utils();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles//index.css">
-
+    <script src="./js/script.js" defer></script>
+    <script src="https://kit.fontawesome.com/bfbe8a8ac6.js" crossorigin="anonymous"></script>
     <title>PokeEtec</title>
 </head>
 
 <body>
     <div class="container">
-
+        <div class="pokemon-modal">
+            <div class="pokemon-modal-card">
+                <button class="modal-close-button">Fechar</button>
+                <div class="pokemon-modal-cotent"></div>
+            </div>
+        </div>
         <header class="header">
             <div class="center">
                 <div class="logo-container"><img class="pokemon-logo" src="./assets/pokemon-logo.png" alt="logo"></div>
@@ -28,7 +34,10 @@ $util = new utils();
                 <?php
                 foreach ($pokemons as $pokemon) {
                 ?>
-                    <div class='pokemon-card'>
+                    <div class='pokemon-card' 
+                    data-id="<?php echo $pokemon["order"] ?>"
+                    data-name="<?php echo $pokemon["name"] ?>"
+                    data-typeprimary="<?php echo $pokemon["types"][0] ?>">
                         <img class="pokemon-card-image" src="<?php echo $pokemon["sprite"] ?>" alt="">
                         <h1 class="pokemon-card-name"><?php echo $pokemon["name"] ?></h1>
                         <div class="type-container">
