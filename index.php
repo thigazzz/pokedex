@@ -21,7 +21,16 @@ $util = new utils();
         <div class="pokemon-modal">
             <div class="pokemon-modal-card">
                 <button class="modal-close-button">Fechar</button>
-                <div class="pokemon-modal-cotent"></div>
+                <div class="pokemon-modal-content">
+                    <img src="./assets/pokemon-logo.png" alt="" class="modal-img">
+                    <h1 class="modal-id"></h1>
+                    <h1 class="modal-name"></h1>
+                    <h3 class="modal-height"></h3>
+                    <h3 class="modal-weight"></h3>
+                    <h3 class="base-experience"></h3>
+                    </h3>
+                    <div class="modal-type"></div>
+                </div>
             </div>
         </div>
         <header class="header">
@@ -35,9 +44,13 @@ $util = new utils();
                 foreach ($pokemons as $pokemon) {
                 ?>
                     <div class='pokemon-card' 
-                    data-id="<?php echo $pokemon["order"] ?>"
-                    data-name="<?php echo $pokemon["name"] ?>"
-                    data-typeprimary="<?php echo $pokemon["types"][0] ?>">
+                    data-id="<?php echo $pokemon["id"] ?>" 
+                    data-name="<?php echo $pokemon["name"] ?>" 
+                    data-typeprimary="<?php echo $pokemon["types"][0] ?>"
+                    data-img="<?php echo $pokemon["sprite"] ?>" 
+                    data-height="<?php echo $pokemon["height"] ?>" 
+                    data-weight="<?php echo $pokemon["weight"] ?>" 
+                    data-basexp="<?php echo $pokemon["base_experience"] ?>">
                         <img class="pokemon-card-image" src="<?php echo $pokemon["sprite"] ?>" alt="">
                         <h1 class="pokemon-card-name"><?php echo $pokemon["name"] ?></h1>
                         <div class="type-container">

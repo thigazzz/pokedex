@@ -1,7 +1,7 @@
 <?php
 $pokemons = [];
 $url = 'https://pokeapi.co/api/v2/pokemon/';
-for ($index = 1; $index <= 2; $index++) {
+for ($index = 1; $index <= 5; $index++) {
     $data = json_decode(file_get_contents($url . $index));
 
     if (count($data->types) == 1) {
@@ -14,10 +14,13 @@ for ($index = 1; $index <= 2; $index++) {
     }
 
     $pokemon = [
-        "order" => $data->order,
+        "id" => $data->id,
         "name" => ucfirst($data->name),
         "sprite" => $data->sprites->front_default,
         "types" => $types,
+        "height" => $data->height,
+        "weight" => $data->weight,
+        "base_experience" => $data->base_experience
     ];
     array_push($pokemons, $pokemon);
 }

@@ -170,8 +170,36 @@ body {
   width: 60%;
   height: 60%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   border-radius: 4px;
+}
+.pokemon-modal .pokemon-modal-card .modal-close-button {
+  position: absolute;
+  top: 25%;
+  right: 25%;
+  z-index: 999;
+}
+
+.pokemon-modal .pokemon-modal-card .pokemon-modal-content {
+  background-color: red;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+.pokemon-modal .pokemon-modal-card .pokemon-modal-content .modal-img {
+  width: 100px;
+}
+.pokemon-modal .pokemon-modal-card .pokemon-modal-content .modal-name {
+  font-size: medium;
+  font-weight: bold;
+}
+.pokemon-modal .pokemon-modal-card .pokemon-modal-content .modal-type {
+  width: 150px;
+  height: 30px;
+  background-color: blue;
 }
